@@ -105,5 +105,7 @@ TTree *ExRootTreeWriter::NewTree()
   tree->SetDirectory(fFile);
   tree->SetAutoSave(10000000); // autosave when 10 MB written
 
+  tree->BranchRef(); // build TBranchRef for direct access of TRef
+
   return tree;
 }
